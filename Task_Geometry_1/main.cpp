@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 using namespace std;
 #define TASK_SQR_TRNGL
 #define ROMB
@@ -9,9 +9,9 @@ void main()
 {
 	setlocale(LC_ALL, "");
 	int side, matrix;
-	cout << "Ââåäèòå ðàçìåð ñòîðîíû: "; cin >> side;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€ ÑÑ‚Ð¾Ñ€Ð¾Ð½Ñ‹: "; cin >> side;
 	cout << endl;
-	//1. Êâàäðàò (Square):
+	//1. ÐšÐ²Ð°Ð´Ñ€Ð°Ñ‚ (Square):
 	matrix = side * side;
 #ifdef TASK_SQR_TRNGL
 
@@ -21,7 +21,7 @@ void main()
 		if (i % side == 0) cout << endl;
 	}
 	cout << endl;
-	//2. Òðåóãîëüíèê (Triangle_left_down):
+	//2. Ð¢Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº (Triangle_left_down):
 	int dot = 1, dots = dot;
 	for (int i = 1; i <= matrix; i++)
 	{
@@ -29,7 +29,7 @@ void main()
 		if (i % side == 0) { cout << endl; dots = dot++ + 1; }
 	}
 	cout << endl;
-	//3. Òðåóãîëüíèê (Triangle_left_up):
+	//3. Ð¢Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº (Triangle_left_up):
 	dot = side, dots = dot;
 	for (int i = 1; i <= matrix; i++)
 	{
@@ -37,7 +37,7 @@ void main()
 		if (i % side == 0) { cout << endl; dots = dot-- - 1; }
 	}
 	cout << endl;
-	//4. Òðåóãîëüíèê (Triangle_right_up):
+	//4. Ð¢Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº (Triangle_right_up):
 	int spc = 0, spcs = spc;
 	for (int i = 1; i <= matrix; i++)
 	{
@@ -45,7 +45,7 @@ void main()
 		if (i % side == 0) { cout << endl; spcs = spc++ + 1; }
 	}
 	cout << endl;
-	//5. Òðåóãîëüíèê (Triangle_right_down):
+	//5. Ð¢Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº (Triangle_right_down):
 	spc = side - 1, spcs = spc;
 	for (int i = 1; i <= matrix; i++)
 	{
@@ -55,30 +55,30 @@ void main()
 	cout << endl;
 #endif
 #ifdef ROMB
-	//6. Ðîìá
-	int matrix_romb = matrix * 4;//ñèìâîëüíûé ðàçìåð ôèãóðû
-	int romb_line = side * 2;//îäíà ñòðîêà
-	int dot_1 = side;//ïîëîæåíèå ïåðâîãî ñëýøà
-	int dot_2 = dot_1 + 1;//ïîëîæåíèå âòîðîãî ñëýøà
-	for (int i = 1; i <= matrix_romb; i++)//öåëü: ðåøèòü âñ¸ îäíèì for-îì...
+	//6. Ð Ð¾Ð¼Ð±
+	int matrix_romb = matrix * 4;//ÑÐ¸Ð¼Ð²Ð¾Ð»ÑŒÐ½Ñ‹Ð¹ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
+	int romb_line = side * 2;//Ð¾Ð´Ð½Ð° ÑÑ‚Ñ€Ð¾ÐºÐ°
+	int dot_1 = side;//Ð¿Ð¾Ð»Ð¾Ð¶ÐµÐ½Ð¸Ðµ Ð¿ÐµÑ€Ð²Ð¾Ð³Ð¾ ÑÐ»ÑÑˆÐ°
+	int dot_2 = dot_1 + 1;//Ð¿Ð¾Ð»Ð¾Ð¶ÐµÐ½Ð¸Ðµ Ð²Ñ‚Ð¾Ñ€Ð¾Ð³Ð¾ ÑÐ»ÑÑˆÐ°
+	for (int i = 1; i <= matrix_romb; i++)//Ñ†ÐµÐ»ÑŒ: Ñ€ÐµÑˆÐ¸Ñ‚ÑŒ Ð²ÑÑ‘ Ð¾Ð´Ð½Ð¸Ð¼ for-Ð¾Ð¼...
 	{
-		if (i == (matrix_romb / 2) + 1)//ïåðåôîðìàòèðóåì íèæíþþ ÷àñòü ðîìáà
+		if (i == (matrix_romb / 2) + 1)//Ð¿ÐµÑ€ÐµÑ„Ð¾Ñ€Ð¼Ð°Ñ‚Ð¸Ñ€ÑƒÐµÐ¼ Ð½Ð¸Ð¶Ð½ÑŽÑŽ Ñ‡Ð°ÑÑ‚ÑŒ Ñ€Ð¾Ð¼Ð±Ð°
 		{
 			dot_2 = matrix_romb / 2 + 1;
 			dot_1 = dot_2 + romb_line - 1;
 		}
-		if (dot_1 == i && dot_1 != dot_2)//ïå÷àòü ïåðâîãî ñëýøà, âîçíèêøóþ ïðîáëåìó ñ îäèíàêîâûìè çíà÷åíèÿìè ðåøèë êîñòûë¸ì
+		if (dot_1 == i && dot_1 != dot_2)//Ð¿ÐµÑ‡Ð°Ñ‚ÑŒ Ð¿ÐµÑ€Ð²Ð¾Ð³Ð¾ ÑÐ»ÑÑˆÐ°, Ð²Ð¾Ð·Ð½Ð¸ÐºÑˆÑƒÑŽ Ð¿Ñ€Ð¾Ð±Ð»ÐµÐ¼Ñƒ Ñ Ð¾Ð´Ð¸Ð½Ð°ÐºÐ¾Ð²Ñ‹Ð¼Ð¸ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸ÑÐ¼Ð¸ Ñ€ÐµÑˆÐ¸Ð» ÐºÐ¾ÑÑ‚Ñ‹Ð»Ñ‘Ð¼
 		{
 			cout << "/";
 			dot_1 = dot_1 + romb_line - 1;
 		}
-		else if (dot_2 == i)//ïå÷àòü âòîðîãî ñëýøà
+		else if (dot_2 == i)//Ð¿ÐµÑ‡Ð°Ñ‚ÑŒ Ð²Ñ‚Ð¾Ñ€Ð¾Ð³Ð¾ ÑÐ»ÑÑˆÐ°
 		{
 			cout << "\\";
 			dot_2 = dot_2 + romb_line + 1;
 		}
-		else cout << " ";//èíà÷å - ïóñòî
-		if (i % (side * 2) == 0)cout << endl;//ïåðåâîä ñòðîêè
+		else cout << " ";//Ð¸Ð½Ð°Ñ‡Ðµ - Ð¿ÑƒÑÑ‚Ð¾
+		if (i % (side * 2) == 0)cout << endl;//Ð¿ÐµÑ€ÐµÐ²Ð¾Ð´ ÑÑ‚Ñ€Ð¾ÐºÐ¸
 	}
 	cout << endl;
 #endif 
